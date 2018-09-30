@@ -48,12 +48,19 @@ class PointsLineChart extends React.Component<
 
     // const showTrendLines = true;
 
-    const dataPointCount = 46;
+    const dataPointCount = 23;
 
     const labels: string[] = [];
 
     for (let index = 0; index < dataPointCount; index++) {
-      const element = (index + 1).toString(10);
+      const gameNumber = index + 1;
+
+      // const element = (index + 1) % 5 === 0 ? (index + 1).toString(10) : "";
+      const element =
+        gameNumber % 5 === 0 || gameNumber === 23
+          ? gameNumber.toString(10)
+          : "";
+
       labels.push(element);
     }
 
@@ -151,7 +158,7 @@ class PointsLineChart extends React.Component<
 
       datasets: [
         {
-          label: "2017-2018",
+          label: "2017-",
           fill: false,
           lineTension: 0.1,
 
@@ -174,7 +181,7 @@ class PointsLineChart extends React.Component<
           data: pointsRunning2017
         },
         {
-          label: "2018-2019",
+          label: "2018-",
           fill: false,
           lineTension: 0.1,
           backgroundColor: redLegendFillColour,
@@ -214,7 +221,7 @@ class PointsLineChart extends React.Component<
 
       if (chartData.datasets) {
         chartData.datasets.push({
-          label: "Playoff Form",
+          label: "Playoffs",
           fill: false,
           lineTension: 0.1,
 
@@ -240,7 +247,7 @@ class PointsLineChart extends React.Component<
         });
 
         chartData.datasets.push({
-          label: "Relegation Form",
+          label: "Relegation",
           fill: false,
           lineTension: 0.1,
 
