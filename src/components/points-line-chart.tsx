@@ -50,13 +50,22 @@ class PointsLineChart extends React.Component<
 
     const dataPointCount = 15;
 
+    const labels: string[] = [];
+
+    for (let index = 0; index < dataPointCount; index++) {
+      const element = (index + 1).toString(10);
+      labels.push(element);
+    }
+
     const chartData: ChartData<chartjs.ChartData> = {
       // labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
       // labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
 
-      labels: Array(dataPointCount)
-        .fill(0)
-        .map((e, i) => (i + 1).toString(10)),
+      // labels: Array(dataPointCount)
+      //   .fill(0)
+      //   .map((e, i) => (i + 1).toString(10)),
+
+      labels: labels,
 
       datasets: [
         {
@@ -107,6 +116,20 @@ class PointsLineChart extends React.Component<
     };
 
     if (this.state.showTrendLines) {
+      const playoffFormValues: number[] = [];
+
+      for (let index = 0; index < dataPointCount; index++) {
+        const element = (index + 1) * 1.7;
+        playoffFormValues.push(element);
+      }
+
+      const relegationFormValues: number[] = [];
+
+      for (let index = 0; index < dataPointCount; index++) {
+        const element = (index + 1) * 1.0;
+        relegationFormValues.push(element);
+      }
+
       if (chartData.datasets) {
         chartData.datasets.push({
           label: "Playoff Form",
@@ -131,9 +154,7 @@ class PointsLineChart extends React.Component<
           pointHitRadius: 10,
 
           // data: [1.7, 3.4, 5.1, 6.8, 8.5, 10.2, 11.9, 13.6, 15.3, 17]
-          data: Array(dataPointCount)
-            .fill(0)
-            .map((e, i) => (i + 1) * 1.7)
+          data: playoffFormValues
         });
 
         chartData.datasets.push({
@@ -159,9 +180,7 @@ class PointsLineChart extends React.Component<
           pointHitRadius: 10,
 
           // data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-          data: Array(dataPointCount)
-            .fill(0)
-            .map((e, i) => (i + 1) * 1)
+          data: relegationFormValues
         });
       }
     }
@@ -193,8 +212,8 @@ class PointsLineChart extends React.Component<
     };
 
     return (
-      <div>
-        {/* <div
+      <div style={{ position: "relative", height: "80vh" }}>
+        <div
           className="custom-control custom-checkbox"
           style={{ margin: "30px" }}
         >
@@ -207,7 +226,7 @@ class PointsLineChart extends React.Component<
           <label className="custom-control-label" htmlFor="customCheck1">
             Show Trend Lines
           </label>
-        </div> */}
+        </div>
         <Line
           data={chartData}
           options={chartOptions}
