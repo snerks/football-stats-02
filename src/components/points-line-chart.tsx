@@ -38,6 +38,11 @@ class PointsLineChart extends React.Component<
     const greyLineColour = `rgba(${greyRgba}, 1)`;
     // const greyLegendFillColour = `rgba(${greyRgba}, 0.4)`;
 
+    // 2016 - Alice Blue
+    const aliceBlueRgba = "0, 0, 255";
+    const aliceBlueLineColour = `rgba(${aliceBlueRgba}, 1)`;
+    const aliceBlueLegendFillColour = `rgba(${aliceBlueRgba}, 0.4)`;
+
     const greenRgba = "75, 192, 192";
     const greenLineColour = `rgba(${greenRgba}, 1)`;
     const greenLegendFillColour = `rgba(${greenRgba}, 0.4)`;
@@ -48,7 +53,7 @@ class PointsLineChart extends React.Component<
 
     // const showTrendLines = true;
 
-    const dataPointCount = 23;
+    const dataPointCount = 46;
 
     const labels: string[] = [];
 
@@ -57,11 +62,74 @@ class PointsLineChart extends React.Component<
 
       // const element = (index + 1) % 5 === 0 ? (index + 1).toString(10) : "";
       const element =
-        gameNumber % 5 === 0 || gameNumber === 23
+        gameNumber % 5 === 0 || gameNumber === 1 || gameNumber === 23
           ? gameNumber.toString(10)
           : "";
 
       labels.push(element);
+    }
+
+    const points2016: number[] = [
+      3,
+      3,
+      0,
+      0,
+      3,
+      1,
+      0,
+      3,
+      1,
+      3, // 24 Sep
+
+      3,
+      3,
+      0,
+      0,
+      3,
+      1,
+      0,
+      0,
+      0,
+      3, // 3 Dec
+
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      3, // 4 Feb 2017
+
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      3,
+      3,
+      0, // 4 Apr 2017
+
+      3,
+      3,
+      1,
+      3,
+      3,
+      0
+    ];
+
+    const pointsRunning2016: number[] = [];
+
+    for (let index = 0; index < points2016.length; index++) {
+      const runningTotal = index === 0 ? 0 : pointsRunning2016[index - 1];
+
+      const nextElement = runningTotal + points2016[index];
+
+      pointsRunning2016.push(nextElement);
     }
 
     const points2017: number[] = [
@@ -147,9 +215,6 @@ class PointsLineChart extends React.Component<
     }
 
     const chartData: ChartData<chartjs.ChartData> = {
-      // labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
-      // labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
-
       // labels: Array(dataPointCount)
       //   .fill(0)
       //   .map((e, i) => (i + 1).toString(10)),
@@ -157,6 +222,29 @@ class PointsLineChart extends React.Component<
       labels: labels,
 
       datasets: [
+        {
+          label: "2016-",
+          fill: false,
+          lineTension: 0.1,
+
+          backgroundColor: aliceBlueLegendFillColour,
+          borderColor: aliceBlueLineColour,
+
+          borderCapStyle: "butt",
+          borderDash: [3, 3],
+          borderDashOffset: 0.0,
+          borderJoinStyle: "miter",
+          pointBorderColor: aliceBlueLineColour,
+          pointBackgroundColor: "#fff",
+          pointBorderWidth: 1,
+          pointHoverRadius: 5,
+          pointHoverBackgroundColor: aliceBlueLineColour,
+          pointHoverBorderColor: greyLineColour,
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 10,
+          data: pointsRunning2016
+        },
         {
           label: "2017-",
           fill: false,
@@ -166,10 +254,10 @@ class PointsLineChart extends React.Component<
           borderColor: purpleLineColour,
 
           borderCapStyle: "butt",
-          borderDash: [],
+          borderDash: [3, 3],
           borderDashOffset: 0.0,
           borderJoinStyle: "miter",
-          pointBorderColor: greyLineColour,
+          pointBorderColor: purpleLineColour,
           pointBackgroundColor: "#fff",
           pointBorderWidth: 1,
           pointHoverRadius: 5,
@@ -242,7 +330,6 @@ class PointsLineChart extends React.Component<
           pointRadius: 1,
           pointHitRadius: 10,
 
-          // data: [1.7, 3.4, 5.1, 6.8, 8.5, 10.2, 11.9, 13.6, 15.3, 17]
           data: playoffFormValues
         });
 
@@ -268,7 +355,6 @@ class PointsLineChart extends React.Component<
           pointRadius: 1,
           pointHitRadius: 10,
 
-          // data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
           data: relegationFormValues
         });
       }
