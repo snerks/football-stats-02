@@ -5,12 +5,15 @@
   "dependencies": {
     "@types/chart.js": "^2.7.36",
     "chart.js": "^2.7.2",
+    "gh-pages": "^2.0.0",
     "react": "^16.5.2",
     "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.5.2",
     "react-scripts-ts": "3.1.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
@@ -22,5 +25,6 @@
     "@types/react": "^16.4.14",
     "@types/react-dom": "^16.0.8",
     "typescript": "^3.1.1"
-  }
+  },
+  "homepage": "https://snerks.github.io/football-stats-02"
 }
