@@ -215,7 +215,7 @@ class PointsLineChart extends React.Component<
       <div style={{ position: "relative", height: "80vh" }}>
         <div
           className="custom-control custom-checkbox"
-          style={{ margin: "30px" }}
+          style={{ margin: "10px 30px 5px 25px" }}
         >
           <input
             type="checkbox"
