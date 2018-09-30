@@ -193,7 +193,7 @@ class PointsLineChart extends React.Component<
     };
 
     return (
-      <div style={{ position: "relative", height: "80vh" }}>
+      <div>
         <div
           className="custom-control custom-checkbox"
           style={{ margin: "30px" }}
