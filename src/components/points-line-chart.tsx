@@ -48,13 +48,95 @@ class PointsLineChart extends React.Component<
 
     // const showTrendLines = true;
 
-    const dataPointCount = 15;
+    const dataPointCount = 46;
 
     const labels: string[] = [];
 
     for (let index = 0; index < dataPointCount; index++) {
       const element = (index + 1).toString(10);
       labels.push(element);
+    }
+
+    const points2017: number[] = [
+      3,
+      0,
+      1,
+      1,
+      1,
+      3,
+      1,
+      3,
+      1,
+      3, // 26 Sep
+      3,
+      1,
+      0,
+      3,
+      3,
+      3,
+      1,
+      0,
+      3,
+      3, // 3 Dec
+      3,
+      3,
+      1,
+      3,
+      0,
+      0,
+      0,
+      1,
+      3,
+      0, // 2 Feb 2018
+      1,
+      1,
+      1,
+      0,
+      3,
+      0,
+      1,
+      3,
+      1,
+      0, // 2 Apr 2018
+      0,
+      3,
+      0,
+      1,
+      1,
+      0
+    ];
+
+    const pointsRunning2017: number[] = [];
+
+    for (let index = 0; index < points2017.length; index++) {
+      const runningTotal = index === 0 ? 0 : pointsRunning2017[index - 1];
+
+      const nextElement = runningTotal + points2017[index];
+
+      pointsRunning2017.push(nextElement);
+    }
+
+    const points2018: number[] = [
+      1,
+      1,
+      0,
+      3,
+      3,
+      3,
+      3,
+      0,
+      0,
+      1 // 28 Sep
+    ];
+
+    const pointsRunning2018: number[] = [];
+
+    for (let index = 0; index < points2018.length; index++) {
+      const runningTotal = index === 0 ? 0 : pointsRunning2018[index - 1];
+
+      const nextElement = runningTotal + points2018[index];
+
+      pointsRunning2018.push(nextElement);
     }
 
     const chartData: ChartData<chartjs.ChartData> = {
@@ -89,7 +171,7 @@ class PointsLineChart extends React.Component<
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: [3, 3, 4, 5, 6, 9, 10, 13, 14, 17, 20, 20, 20, 23, 24]
+          data: pointsRunning2017
         },
         {
           label: "2018-2019",
@@ -110,7 +192,7 @@ class PointsLineChart extends React.Component<
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: [1, 2, 2, 5, 8, 11, 14, 14, 14, 15]
+          data: pointsRunning2018
         }
       ]
     };
