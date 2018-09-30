@@ -194,7 +194,7 @@ class PointsLineChart extends React.Component<
 
     return (
       <div>
-        <div
+        {/* <div
           className="custom-control custom-checkbox"
           style={{ margin: "30px" }}
         >
@@ -207,7 +207,7 @@ class PointsLineChart extends React.Component<
           <label className="custom-control-label" htmlFor="customCheck1">
             Show Trend Lines
           </label>
-        </div>
+        </div> */}
         <Line
           data={chartData}
           options={chartOptions}
