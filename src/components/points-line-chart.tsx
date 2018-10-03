@@ -201,7 +201,8 @@ class PointsLineChart extends React.Component<
       3,
       0,
       0,
-      1 // 28 Sep
+      1, // 28 Sep
+      1
     ];
 
     const pointsRunning2018: number[] = [];
