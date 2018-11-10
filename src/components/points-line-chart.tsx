@@ -53,7 +53,7 @@ class PointsLineChart extends React.Component<
 
     // const showTrendLines = true;
 
-    const dataPointCount = 25;
+    const dataPointCount = 38;
 
     const labels: string[] = [];
 
@@ -157,7 +157,8 @@ class PointsLineChart extends React.Component<
       3,
       1,
       3,
-      0,
+      0, // 30 Dec
+
       0,
       0,
       1,
@@ -219,6 +220,59 @@ class PointsLineChart extends React.Component<
       const nextElement = runningTotal + points2018[index];
 
       pointsRunning2018.push(nextElement);
+    }
+
+    const pointsCalendar2018: number[] = [
+      0, // 1 Jan 2018
+      0,
+      1,
+      3,
+      0, // 2 Feb 2018
+      1,
+      1,
+      1,
+      0,
+      3,
+      0,
+      1,
+      3,
+      1,
+      0, // 2 Apr 2018
+      0,
+      3,
+      0,
+      1,
+      1,
+      0,
+
+      1,
+      1,
+      0,
+      3,
+      3,
+      3,
+      3,
+      0,
+      0,
+      1, // 28 Sep
+      1,
+      0,
+      3,
+      3,
+      0,
+      0, // 03 Nov
+      0
+    ];
+
+    const pointsRunningCalendar2018: number[] = [];
+
+    for (let index = 0; index < pointsCalendar2018.length; index++) {
+      const runningTotal =
+        index === 0 ? 0 : pointsRunningCalendar2018[index - 1];
+
+      const nextElement = runningTotal + pointsCalendar2018[index];
+
+      pointsRunningCalendar2018.push(nextElement);
     }
 
     const chartData: ChartData<chartjs.ChartData> = {
@@ -295,6 +349,27 @@ class PointsLineChart extends React.Component<
           pointRadius: 1,
           pointHitRadius: 10,
           data: pointsRunning2018
+        },
+        {
+          label: "2018",
+          fill: false,
+          lineTension: 0.1,
+          backgroundColor: purpleLegendFillColour,
+          borderColor: purpleLineColour,
+          borderCapStyle: "butt",
+          borderDash: [],
+          borderDashOffset: 0.0,
+          borderJoinStyle: "miter",
+          pointBorderColor: purpleLineColour,
+          pointBackgroundColor: "#fff",
+          pointBorderWidth: 1,
+          pointHoverRadius: 5,
+          pointHoverBackgroundColor: purpleLineColour,
+          pointHoverBorderColor: greyLineColour,
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 10,
+          data: pointsRunningCalendar2018
         }
       ]
     };
