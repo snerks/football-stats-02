@@ -53,7 +53,7 @@ class PointsLineChart extends React.Component<
 
     // const showTrendLines = true;
 
-    const dataPointCount = 38;
+    const dataPointCount = 39;
 
     const labels: string[] = [];
 
@@ -262,6 +262,7 @@ class PointsLineChart extends React.Component<
       3,
       0,
       0, // 03 Nov
+      0,
       0
     ];
 
