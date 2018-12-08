@@ -53,21 +53,21 @@ class PointsLineChart extends React.Component<
 
     // const showTrendLines = true;
 
-    const dataPointCount = 40;
+    // const dataPointCount = 40;
 
-    const labels: string[] = [];
+    // const labels: string[] = [];
 
-    for (let index = 0; index < dataPointCount; index++) {
-      const gameNumber = index + 1;
+    // for (let index = 0; index < dataPointCount; index++) {
+    //   const gameNumber = index + 1;
 
-      // const element = (index + 1) % 5 === 0 ? (index + 1).toString(10) : "";
-      const element =
-        gameNumber % 5 === 0 || gameNumber === 1 || gameNumber === 23
-          ? gameNumber.toString(10)
-          : "";
+    //   // const element = (index + 1) % 5 === 0 ? (index + 1).toString(10) : "";
+    //   const element =
+    //     gameNumber % 5 === 0 || gameNumber === 1 || gameNumber === 23
+    //       ? gameNumber.toString(10)
+    //       : "";
 
-      labels.push(element);
-    }
+    //   labels.push(element);
+    // }
 
     const points2016: number[] = [
       3,
@@ -281,6 +281,22 @@ class PointsLineChart extends React.Component<
       const nextElement = runningTotal + pointsCalendar2018[index];
 
       pointsRunningCalendar2018.push(nextElement);
+    }
+
+    const dataPointCount = pointsCalendar2018.length;
+
+    const labels: string[] = [];
+
+    for (let index = 0; index < dataPointCount; index++) {
+      const gameNumber = index + 1;
+
+      // const element = (index + 1) % 5 === 0 ? (index + 1).toString(10) : "";
+      const element =
+        gameNumber % 5 === 0 || gameNumber === 1 || gameNumber === 23
+          ? gameNumber.toString(10)
+          : "";
+
+      labels.push(element);
     }
 
     const chartData: ChartData<chartjs.ChartData> = {
