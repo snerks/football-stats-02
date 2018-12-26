@@ -215,6 +215,7 @@ class PointsLineChart extends React.Component<
       1,
       3, // 08 Dec
       1,
+      1,
       1
     ];
 
@@ -272,6 +273,7 @@ class PointsLineChart extends React.Component<
       3,
       1,
       3, // 08 Dec
+      1,
       1,
       1
     ];
