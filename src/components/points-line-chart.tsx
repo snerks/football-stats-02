@@ -412,7 +412,8 @@ class PointsLineChart extends React.Component<
       const playoffFormValues: number[] = [];
 
       for (let index = 0; index < dataPointCount; index++) {
-        const element = (index + 1) * 1.7;
+        // const element = (index + 1) * 1.7;
+        const element = (index + 1) * 1.61;
         playoffFormValues.push(element);
       }
 
