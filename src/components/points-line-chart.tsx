@@ -222,7 +222,7 @@ class PointsLineChart extends React.Component<
       3,
       3,
       3,
-      3
+      3 // 09 Feb
     ];
 
     const pointsRunning2018: number[] = [];
