@@ -235,6 +235,7 @@ class PointsLineChart extends React.Component<
       3,
       0,
       1,
+      0,
       0
     ];
 
