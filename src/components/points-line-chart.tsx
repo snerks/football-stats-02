@@ -70,6 +70,7 @@ class PointsLineChart extends React.Component<
     // }
 
     const points2016: number[] = [
+      0,
       3,
       3,
       0,
@@ -133,6 +134,7 @@ class PointsLineChart extends React.Component<
     }
 
     const points2017: number[] = [
+      0,
       3,
       0,
       1,
@@ -193,6 +195,7 @@ class PointsLineChart extends React.Component<
     }
 
     const points2018: number[] = [
+      0,
       1,
       1,
       0,
@@ -319,11 +322,12 @@ class PointsLineChart extends React.Component<
     const labels: string[] = [];
 
     for (let index = 0; index < dataPointCount; index++) {
-      const gameNumber = index + 1;
+      // const gameNumber = index + 1;
+      const gameNumber = index;
 
       // const element = (index + 1) % 5 === 0 ? (index + 1).toString(10) : "";
       const element =
-        gameNumber % 5 === 0 || gameNumber === 1 || gameNumber === 23
+        gameNumber % 5 === 0 || gameNumber === 23 || gameNumber === 46
           ? gameNumber.toString(10)
           : "";
 
@@ -435,14 +439,14 @@ class PointsLineChart extends React.Component<
 
       for (let index = 0; index < dataPointCount; index++) {
         // const element = (index + 1) * 1.7;
-        const element = (index + 1) * 1.61;
+        const element = index * 1.61;
         playoffFormValues.push(element);
       }
 
       const relegationFormValues: number[] = [];
 
       for (let index = 0; index < dataPointCount; index++) {
-        const element = (index + 1) * 1.0;
+        const element = index * 1.0;
         relegationFormValues.push(element);
       }
 
