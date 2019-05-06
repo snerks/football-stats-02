@@ -251,68 +251,70 @@ class PointsLineChart extends React.Component<
       pointsRunning2018.push(nextElement);
     }
 
-    const pointsCalendar2018: number[] = [
-      0, // 1 Jan 2018
-      0,
-      1,
-      3,
-      0, // 2 Feb 2018
-      1,
-      1,
-      1,
-      0,
-      3,
-      0,
-      1,
-      3,
-      1,
-      0, // 2 Apr 2018
-      0,
-      3,
-      0,
-      1,
-      1,
-      0,
+    // const pointsCalendar2018: number[] = [
+    //   0, // 1 Jan 2018
+    //   0,
+    //   1,
+    //   3,
+    //   0, // 2 Feb 2018
+    //   1,
+    //   1,
+    //   1,
+    //   0,
+    //   3,
+    //   0,
+    //   1,
+    //   3,
+    //   1,
+    //   0, // 2 Apr 2018
+    //   0,
+    //   3,
+    //   0,
+    //   1,
+    //   1,
+    //   0,
 
-      1,
-      1,
-      0,
-      3,
-      3,
-      3,
-      3,
-      0,
-      0,
-      1, // 28 Sep
-      1,
-      0,
-      3,
-      3,
-      0,
-      0, // 03 Nov
-      0,
-      0,
-      3,
-      1,
-      3, // 08 Dec
-      1,
-      1,
-      1,
-      3 // 29 Dec
-    ];
+    //   1,
+    //   1,
+    //   0,
+    //   3,
+    //   3,
+    //   3,
+    //   3,
+    //   0,
+    //   0,
+    //   1, // 28 Sep
+    //   1,
+    //   0,
+    //   3,
+    //   3,
+    //   0,
+    //   0, // 03 Nov
+    //   0,
+    //   0,
+    //   3,
+    //   1,
+    //   3, // 08 Dec
+    //   1,
+    //   1,
+    //   1,
+    //   3 // 29 Dec
+    // ];
 
-    const pointsRunningCalendar2018: number[] = [];
+    // const pointsRunningCalendar2018: number[] = [];
 
-    for (let index = 0; index < pointsCalendar2018.length; index++) {
-      const runningTotal =
-        index === 0 ? 0 : pointsRunningCalendar2018[index - 1];
+    // for (let index = 0; index < pointsCalendar2018.length; index++) {
+    //   const runningTotal =
+    //     index === 0 ? 0 : pointsRunningCalendar2018[index - 1];
 
-      const nextElement = runningTotal + pointsCalendar2018[index];
+    //   const nextElement = runningTotal + pointsCalendar2018[index];
 
-      pointsRunningCalendar2018.push(nextElement);
-    }
+    //   pointsRunningCalendar2018.push(nextElement);
+    // }
 
-    const dataPointCount = pointsCalendar2018.length;
+    // const dataPointCount = pointsCalendar2018.length;
+
+    const dataPointCount = pointsRunning2018.length;
 
     const labels: string[] = [];
 
@@ -422,7 +424,8 @@ class PointsLineChart extends React.Component<
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: pointsRunningCalendar2018
+          // data: pointsRunningCalendar2018,
+          data: pointsRunning2018
         }
       ]
     };
