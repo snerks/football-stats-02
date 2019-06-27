@@ -408,29 +408,30 @@ class PointsLineChart extends React.Component<
           pointRadius: 1,
           pointHitRadius: 10,
           data: pointsRunning2018
-        },
-        {
-          label: "2018",
-          fill: false,
-          lineTension: 0.1,
-          backgroundColor: purpleLegendFillColour,
-          borderColor: purpleLineColour,
-          borderCapStyle: "butt",
-          borderDash: [],
-          borderDashOffset: 0.0,
-          borderJoinStyle: "miter",
-          pointBorderColor: purpleLineColour,
-          pointBackgroundColor: "#fff",
-          pointBorderWidth: 1,
-          pointHoverRadius: 5,
-          pointHoverBackgroundColor: purpleLineColour,
-          pointHoverBorderColor: greyLineColour,
-          pointHoverBorderWidth: 2,
-          pointRadius: 1,
-          pointHitRadius: 10,
-          // data: pointsRunningCalendar2018,
-          data: pointsRunning2018
         }
+        // ,
+        // {
+        //   label: "2018",
+        //   fill: false,
+        //   lineTension: 0.1,
+        //   backgroundColor: purpleLegendFillColour,
+        //   borderColor: purpleLineColour,
+        //   borderCapStyle: "butt",
+        //   borderDash: [],
+        //   borderDashOffset: 0.0,
+        //   borderJoinStyle: "miter",
+        //   pointBorderColor: purpleLineColour,
+        //   pointBackgroundColor: "#fff",
+        //   pointBorderWidth: 1,
+        //   pointHoverRadius: 5,
+        //   pointHoverBackgroundColor: purpleLineColour,
+        //   pointHoverBorderColor: greyLineColour,
+        //   pointHoverBorderWidth: 2,
+        //   pointRadius: 1,
+        //   pointHitRadius: 10,
+        //   // data: pointsRunningCalendar2018,
+        //   data: pointsRunning2018
+        // }
       ]
     };
 
