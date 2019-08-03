@@ -409,7 +409,7 @@ class PointsLineChart extends React.Component<
           backgroundColor: orangeLegendFillColour,
           borderColor: orangeLineColour,
           borderCapStyle: "butt",
-          borderDash: [],
+          borderDash: [3, 3],
           borderDashOffset: 0.0,
           borderJoinStyle: "miter",
           pointBorderColor: orangeLineColour,
