@@ -254,6 +254,20 @@ class PointsLineChart extends React.Component<
       pointsRunning2018.push(nextElement);
     }
 
+    const points2019: number[] = [
+      0 // Dummy 0th result
+    ];
+
+    const pointsRunning2019: number[] = [];
+
+    for (let index = 0; index < points2019.length; index++) {
+      const runningTotal = index === 0 ? 0 : pointsRunning2019[index - 1];
+
+      const nextElement = runningTotal + points2019[index];
+
+      pointsRunning2019.push(nextElement);
+    }
+
     // const pointsCalendar2018: number[] = [
     //   0, // 1 Jan 2018
     //   0,
@@ -392,6 +406,27 @@ class PointsLineChart extends React.Component<
           label: "2018-",
           fill: false,
           lineTension: 0.1,
+          backgroundColor: orangeLegendFillColour,
+          borderColor: orangeLineColour,
+          borderCapStyle: "butt",
+          borderDash: [],
+          borderDashOffset: 0.0,
+          borderJoinStyle: "miter",
+          pointBorderColor: orangeLineColour,
+          pointBackgroundColor: "#fff",
+          pointBorderWidth: 1,
+          pointHoverRadius: 5,
+          pointHoverBackgroundColor: orangeLineColour,
+          pointHoverBorderColor: greyLineColour,
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 10,
+          data: pointsRunning2018
+        },
+        {
+          label: "2019-",
+          fill: false,
+          lineTension: 0.1,
           backgroundColor: redLegendFillColour,
           borderColor: redLineColour,
           borderCapStyle: "butt",
@@ -407,7 +442,7 @@ class PointsLineChart extends React.Component<
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: pointsRunning2018
+          data: pointsRunning2019
         }
         // ,
         // {
