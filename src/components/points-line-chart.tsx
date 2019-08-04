@@ -342,7 +342,10 @@ class PointsLineChart extends React.Component<
 
       // const element = (index + 1) % 5 === 0 ? (index + 1).toString(10) : "";
       const element =
-        gameNumber % 5 === 0 || gameNumber === 23 || gameNumber === 46
+        gameNumber % 5 === 0 ||
+        gameNumber === 1 ||
+        gameNumber === 23 ||
+        gameNumber === 46
           ? gameNumber.toString(10)
           : "";
 
