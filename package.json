@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@types/chart.js": "^2.7.36",
-    "chart.js": "^2.7.2",
+    "chart.js": "^2.9.4",
     "gh-pages": "^2.0.0",
     "react": "^16.5.2",
     "react-chartjs-2": "^2.7.4",
